@@ -1,0 +1,13 @@
+zomato API
+
+MVP
+1. Landing page to prompts user to start selections for food
+2. User selections cuisine type 
+	- cuisine: italian, japanese, chinese, french, caribbean
+3.  Output returns 2 selections to compare for user to pick
+stretch goal
+
+Stretch Goals
+1. apply different city option
+2. filter by price range
+3. Link output selections to restaurant reservation website 

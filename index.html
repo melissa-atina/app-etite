@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+	<script>
+	$.ajax({
+        url: 'https://developers.zomato.com/api/v2.1/cuisines',
+        method: 'GET',
+        dataType: 'json',
+        headers: {
+            "user-key": "ef7bb4cac402a95c8319040f2339e230",
+        },
+        data: {
+			city_id: 89,
+			// q: "toronto"
+        }
+    }).then(function (response) {
+        // console.log('something is happening');
+        console.log(response);
+    });
+	</script>
+</body>
+</html>
