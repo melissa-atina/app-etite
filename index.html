@@ -7,23 +7,36 @@
 </head>
 <body>
 
-	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-	<script>
-	$.ajax({
-        url: 'https://developers.zomato.com/api/v2.1/cuisines',
-        method: 'GET',
-        dataType: 'json',
-        headers: {
-            "user-key": "ef7bb4cac402a95c8319040f2339e230",
-        },
-        data: {
-			city_id: 89,
-			// q: "toronto"
-        }
-    }).then(function (response) {
-        // console.log('something is happening');
-        console.log(response);
-    });
-	</script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script>
+    // const foodApp = {};
+
+    //     foodApp.apiKey = "ef7bb4cac402a95c8319040f2339e230";
+    //     foodApp.url = "https://developers.zomato.com/api/v2.1/search";
+
+
+        // foodApp.getFood = () => {
+        //gets food data
+        $.ajax({
+            url: "https://developers.zomato.com/api/v2.1/search",
+            method: 'GET',
+            dataType: 'json',
+            headers: {
+                "user-key": "ef7bb4cac402a95c8319040f2339e230",
+            },
+            data: {
+                city_id: 89,
+                cuisines: '411',
+                count: 2
+                // q: "toronto"
+            }
+        }).then(function (response) {
+            // console.log('something is happening');
+            console.log(response.restaurants);
+        });
+        // }
+    </script>
+
+	<!-- <script src="script.js"></script> -->
 </body>
 </html>
