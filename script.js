@@ -1,6 +1,7 @@
 $(function() {
 
 
+
 const foodApp = {};
 
 foodApp.apiKey = "ef7bb4cac402a95c8319040f2339e230";

@@ -9,34 +9,68 @@
 
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script>
-    // const foodApp = {};
-
-    //     foodApp.apiKey = "ef7bb4cac402a95c8319040f2339e230";
-    //     foodApp.url = "https://developers.zomato.com/api/v2.1/search";
-
-
-        // foodApp.getFood = () => {
-        //gets food data
+    
+    const foodApp = {};
+    foodApp.apiKey = "ef7bb4cac402a95c8319040f2339e230",
+    foodApp.apiUrl = "https://developers.zomato.com/api/v2.1/search",
+    
+    //call zomato API with cuisine query
+    foodApp.foodEntity = function(cuisine) {
         $.ajax({
-            url: "https://developers.zomato.com/api/v2.1/search",
+            url: foodApp.apiUrl,
             method: 'GET',
             dataType: 'json',
             headers: {
-                "user-key": "ef7bb4cac402a95c8319040f2339e230",
+                "user-key": foodApp.apiKey,
             },
             data: {
                 city_id: 89,
-                cuisines: '411',
-                count: 2
+                cuisines: cuisine ,
+                data: 'json',
+                // count: 2
                 // q: "toronto"
             }
-        }).then(function (response) {
-            // console.log('something is happening');
-            console.log(response.restaurants);
-        });
-        // }
-    </script>
+        }).then(function(response)  {
+            console.log(response)
+        })
+    }         
+    
+    foodApp.displayEntity = function(foodObject) {
+        foodObject.forEach(function(foodItem) {
+            //create variable for title, image, rating, address
 
-	<!-- <script src="script.js"></script> -->
+            const title = foodItem.name;
+        })
+        console.log(title)
+    }
+
+    // reco.forEach((result) => {
+    //     console.log(`${restaurants.name}`)
+    // })
+    
+    // const cuisineArray = [];
+    
+    // for (let i = 1; i <= 20; i++) {
+        //     cuisineArray.push(getFood(i))
+        // }
+        
+        // $.when(cuisineArray)
+        // .then((restaurantName) => {
+            //     console.log(restaurantName)
+            // })
+        foodApp.init = function() {
+            foodApp.getFood(100);
+
+
+
+
+        }    
+
+        $(function() {
+            foodApp.init();
+        })
+        
+        </script>
+
 </body>
 </html>

@@ -1,11 +1,11 @@
-zomato API
+APPetite narrows down restaurant choices based on user cuisine choice
 
 MVP
 1. Landing page to prompts user to start selections for food
 2. User selections cuisine type 
 	- cuisine: italian, japanese, chinese, french, caribbean
 3.  Output returns 2 selections to compare for user to pick
-stretch goal
+
 
 Stretch Goals
 1. apply different city option
@@ -14,3 +14,24 @@ Stretch Goals
 
 
 pseudocode
+//create ajax function that passes in our query of "cuisine" that the user selected
+	//create an array for the returning objects (?)
+	//spread the promise objects (?)
+	//rest the promise objects (?)
+//upon returning restaurants that match the cuisine selected, randomly select 2 
+	//if no image, don't show
+create a variable(s) that extracts the restaurant name, rating, address, and image
+//append variables to li's on page
+
+
+
+cuisine IDs
+
+chinese - 25,
+italian - 55, 
+jamaican - 207,
+desserts - 100
+filipino - 112,
+greek - 156
+indian - 148
+mexican - 73
