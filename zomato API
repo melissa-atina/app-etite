@@ -35,3 +35,9 @@ filipino - 112,
 greek - 156
 indian - 148
 mexican - 73
+
+
+GOALS FOR TODAY (WEDNESDAY)
+- create variables for title, image, rating, address
+- append to page
+- make query easily changeable? 

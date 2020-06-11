@@ -15,7 +15,7 @@
     foodApp.apiUrl = "https://developers.zomato.com/api/v2.1/search",
     
     //call zomato API with cuisine query
-    foodApp.foodEntity = function(cuisine) {
+    foodApp.foodEntity = (cuisine) => {
         $.ajax({
             url: foodApp.apiUrl,
             method: 'GET',
@@ -26,50 +26,29 @@
             data: {
                 city_id: 89,
                 cuisines: cuisine ,
-                data: 'json',
+                // data: 'json',
                 // count: 2
                 // q: "toronto"
-            }
-        }).then(function(response)  {
-            console.log(response)
-        })
-    }         
-    
-    foodApp.displayEntity = function(foodObject) {
-        foodObject.forEach(function(foodItem) {
-            //create variable for title, image, rating, address
+            },
+        }).then(function(result){
+            // console.log(result.restaurants)
 
-            const title = foodItem.name;
-        })
-        console.log(title)
-    }
-
-    // reco.forEach((result) => {
-    //     console.log(`${restaurants.name}`)
-    // })
-    
-    // const cuisineArray = [];
-    
-    // for (let i = 1; i <= 20; i++) {
-        //     cuisineArray.push(getFood(i))
-        // }
+            for (let i = 1; i <= 20; i++) {
+            
+        }
         
-        // $.when(cuisineArray)
-        // .then((restaurantName) => {
-            //     console.log(restaurantName)
-            // })
-        foodApp.init = function() {
-            foodApp.getFood(100);
+    })
+}
 
 
+    foodApp.init = () => {
+        foodApp.foodEntity(100);
+    }   
 
-
-        }    
-
-        $(function() {
-            foodApp.init();
-        })
-        
+    $(function() {
+        foodApp.init();
+    })
+    
         </script>
 
 </body>
