@@ -4,7 +4,7 @@
     foodApp.apiUrl = "https://developers.zomato.com/api/v2.1/search";
 
     // make empty array for our API response
-    const response = []
+    const response = [];
     
     // call zomato API with cuisine query
     foodApp.foodEntity = (cuisine) => {
@@ -23,27 +23,32 @@
                 // q: "toronto"
             },
         }).then((result) => {
-            console.log(result.restaurants)
+            // console.log(result.restaurants)
             foodApp.displayFood(result)
         });
+	}
+
 
 		foodApp.displayFood = (result) => {
-
 			// organize result
 			result.restaurants.forEach((item) => {
-				// console.log(item.restaurant); // each restaurant object is here
+		// each restaurant object is here
 				const title = item.restaurant.name;
 				const rating = item.restaurant.user_rating["aggregate_rating"];
 				const address = item.restaurant.location["address"];
+
 				
 				// push title to response array we created earlier
 				response.push(title, rating, address)
 			})
 		}
-
             // Do stuff w your response $HERE
             // console.log(response) // example
-    }
+	
+	function randomFood(response) {
+		return Math.floor(Math.random() * Math.floor(response.length))
+	}
+	console.log(randomFood)
 
     
     // hmmmm okay so this works but what’s happening is that
@@ -52,14 +57,6 @@
 
     console.log(response) // this will run before the API reponse so `response` will show as empty
 
-    // foodApp.displayFood = (foodArray) => {
-    //     foodArray.forEach((item) => {
-    //         const title = item.name;
-    //         console.log(title)
-    //     })
-    // }
-
-    // hello i am here !!!!!!!!!!!!
 
     foodApp.init = () => {
         foodApp.foodEntity(207);
