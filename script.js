@@ -35,9 +35,7 @@
 		// each restaurant object is here
 				const title = item.restaurant.name;
 				const rating = item.restaurant.user_rating["aggregate_rating"];
-				const address = item.restaurant.location["address"];
-
-				
+				const address = item.restaurant.location["address"];			
 				// push title to response array we created earlier
 				response.push(title, rating, address)
 			})
@@ -45,10 +43,21 @@
             // Do stuff w your response $HERE
             // console.log(response) // example
 	
-	function randomFood(response) {
-		return Math.floor(Math.random() * Math.floor(response.length))
-	}
-	console.log(randomFood)
+    //function that gives random integer
+		const randomItem = response
+
+    //for each 'block' in the content array, give each block a random "position" between 1 and 9
+    response.forEach(block => {
+        block.position = getRandomInt(30);
+    });
+
+    //sort our array based on random "position" value, and makes sure that no li's are repeated on the page
+    response.sort(function(a, b) {
+        return a.position - b.position
+    });
+
+    // the number of blocks(divs) to show on the page
+    response.length = 9;
 
     
     // hmmmm okay so this works but what’s happening is that
