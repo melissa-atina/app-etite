@@ -34,6 +34,7 @@
             
 			result.restaurants.forEach((item) => {
 
+
                 // each restaurant object is here
 				const title = $('<h2>').text(item.restaurant.name);
 				const rating = $('<p>').text(item.restaurant.user_rating["aggregate_rating"]);
