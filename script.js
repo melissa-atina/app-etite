@@ -33,6 +33,7 @@
 			// organize result
             
 			result.restaurants.forEach((item) => {
+
                 // each restaurant object is here
 				const title = $('<h2>').text(item.restaurant.name);
 				const rating = $('<p>').text(item.restaurant.user_rating["aggregate_rating"]);
@@ -41,6 +42,7 @@
                 $('ul').append(container);
                 // console.log(container)
 				// $('ul').text(title);
+
 				// push title to response array we created earlier
                 
                 const randomItem = [Math.floor(Math.random() * response.length)]
@@ -58,7 +60,7 @@
     // this function ⤵ gets called BEFORE the response comes back from
     // your api call - so either you will need to put all your stuff $HERE↖ so that code runs after you get a response back, or wrap all this code in an async function, and then await the API response
 
-    // console.log(response) // this will run before the API reponse so `response` will show as empty
+
 
 
     foodApp.init = () => {
