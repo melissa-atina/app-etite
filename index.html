@@ -8,48 +8,7 @@
 <body>
 
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-    <script>
-    
-    const foodApp = {};
-    foodApp.apiKey = "ef7bb4cac402a95c8319040f2339e230",
-    foodApp.apiUrl = "https://developers.zomato.com/api/v2.1/search",
-    
-    //call zomato API with cuisine query
-    foodApp.foodEntity = (cuisine) => {
-        $.ajax({
-            url: foodApp.apiUrl,
-            method: 'GET',
-            dataType: 'json',
-            headers: {
-                "user-key": foodApp.apiKey,
-            },
-            data: {
-                city_id: 89,
-                cuisines: cuisine ,
-                // data: 'json',
-                // count: 2
-                // q: "toronto"
-            },
-        }).then(function(result){
-            // console.log(result.restaurants)
-
-            for (let i = 1; i <= 20; i++) {
-            
-        }
-        
-    })
-}
-
-
-    foodApp.init = () => {
-        foodApp.foodEntity(100);
-    }   
-
-    $(function() {
-        foodApp.init();
-    })
-    
-        </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
