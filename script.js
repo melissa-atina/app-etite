@@ -66,10 +66,16 @@
 
 
 
-    response.init = () => {
-        foodApp.foodEntity(207);
-        }
+foodApp.init = () => {
+    foodApp.foodEntity(207);
+}   
 
+<<<<<<< HEAD
     $(function() {
         response.init();
     })
+=======
+$(function() {
+    foodApp.init();
+})
+>>>>>>> 8d819bbf67c8ad625deb312d496e68e3d123122f
