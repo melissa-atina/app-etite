@@ -16,7 +16,7 @@ foodApp.foodEntity = (cuisine) => {
         },
         data: {
             city_id: 89,
-            cuisines: cuisine ,
+            cuisines: `${cuisine}` ,
             // data: 'json',
             // count: 2
             // q: "toronto"
@@ -27,8 +27,8 @@ foodApp.foodEntity = (cuisine) => {
     });
 }
 
-
     foodApp.displayFood = (result) => {
+        $('ul').empty();
         // organize result
         
         result.restaurants.forEach((item) => {
@@ -38,22 +38,24 @@ foodApp.foodEntity = (cuisine) => {
             const address = $('<p>').text(item.restaurant.location["address"]);
             const container = $('<li>').append(title, rating, address);
             $('ul').append(container);
-            // console.log(container)
-            // $('ul').text(title);
             // push title to response array we created earlier
             
-            const randomItem = [Math.floor(Math.random() * response.length)]
-            console.log(randomItem)
-
             response.push(title, rating, address)
         })
     }
-        // Do stuff w your response $HERE
-        // console.log(response) // example
-
+    foodApp.updateTitle = (subject) => {
+        $('#page-title').find('span').text(subject)
+    }
 
 foodApp.init = () => {
-    foodApp.foodEntity(207);
+    // foodApp.foodEntity(73);
+
+    $('#cuisine').on('change',function() {
+		const cuisineName = $(this).find(':selected').text();
+        const cuisine = this.value;
+        foodApp.updateTitle(cuisineName);
+		foodApp.foodEntity(cuisine);
+	})
 }   
 
 $(function() {
