@@ -40,13 +40,13 @@ foodApp.foodEntity = (cuisine) => {
 
         //divide const by 2 and should return # of various pages in the cuisine array
         const noOfpages = (Math.ceil(resultpp / 2));
-        console.log(noOfpages)
+        // console.log(noOfpages)
         //we want a fully randomized number of restaurants
 
         //1- # of pages <50 or >50
         //we want to assign the random page based on if it provides less than or  more than 50
         let randomPage = 1;
-        console.log(noOfpages)
+        // console.log(noOfpages)
         if (noOfpages >= 50) {
             randomPage = (Math.ceil(Math.random()* 50));
             //this one would apply to all restaurants that have greater than 50 pages
@@ -54,7 +54,7 @@ foodApp.foodEntity = (cuisine) => {
             randomPage = (Math.ceil(Math.random()* noOfpages));
             console.log('else')
         }
-        console.log(randomPage)
+        // console.log(randomPage)
         //since we can start on any page we want, we want to generate a random page number
         //create a 2nd API call and pass the randomizeStart as start param
         $.ajax({
@@ -71,7 +71,7 @@ foodApp.foodEntity = (cuisine) => {
                 count: 2,
             },
         }).then((result) => {
-            console.log(result)
+            // console.log(result)
             foodApp.displayFood(result)
 
         })
@@ -91,10 +91,20 @@ foodApp.foodEntity = (cuisine) => {
             const title = $('<h2>').text(item.restaurant.name);
             const rating = $('<p>').text(item.restaurant.user_rating["aggregate_rating"]);
             const address = $('<p>').text(item.restaurant.location["address"]);
-            const container = $('<li>').append(title, rating, address);
+            
+            let image = 1;
+            if (item.restaurant.thumb != "") {
+                image = $('<img>').attr('src', item.restaurant.thumb);
+                console.log(item.restaurant.thumb)
+            } else {
+                image = $('<img>').attr('src', 'http://lorempixel.com/200/200/food')
+                console.log('placeholder')
+            }
+            const container = $('<li>').append(title, rating, address, image);
             $('ul').append(container);
+        
             // push title to response array we created earlier
-            response.push(title, rating, address)
+            response.push(title, rating, address, image)
         })
     }
 
