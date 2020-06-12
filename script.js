@@ -51,7 +51,6 @@
             //     return Math.floor(Math.random() * Math.floor(max)) + 1;
             // }
 
-<<<<<<< HEAD
         //for each 'restaurant' in the response array, give each block a random "position" between 1 and 9
             // response.forEach(item => {
             // response.position = getRandomInt(30);
@@ -61,42 +60,10 @@
             // response.sort(function(a, b) {
             //     return a.position - b.position
             // });
-=======
-		foodApp.displayFood = (result) => {
-			// organize result
-            
-			result.restaurants.forEach((item) => {
-
-
-                // each restaurant object is here
-				const title = $('<h2>').text(item.restaurant.name);
-				const rating = $('<p>').text(item.restaurant.user_rating["aggregate_rating"]);
-				const address = $('<p>').text(item.restaurant.location["address"]);
-                const container = $('<li>').append(title, rating, address);
-                $('ul').append(container);
-                // console.log(container)
-				// $('ul').text(title);
-
-				// push title to response array we created earlier
-                
-                const randomItem = [Math.floor(Math.random() * response.length)]
-                console.log(randomItem)
-
-                response.push(title, rating, address)
-			})
-		}
-            // Do stuff w your response $HERE
-            // console.log(response) // example
-	
->>>>>>> 92cd0b5126900bf7286d3192e5c558ba63d8a084
 
         // the number of blocks(li) to show on the page
             // response.length = 2;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 92cd0b5126900bf7286d3192e5c558ba63d8a084
 
 
     response.init = () => {
@@ -104,13 +71,5 @@
         }
 
     $(function() {
-<<<<<<< HEAD
         response.init();
     })
-=======
-        foodApp.init();
-    })
-	 
-	 
-	//  this is a test for mel
->>>>>>> 92cd0b5126900bf7286d3192e5c558ba63d8a084
