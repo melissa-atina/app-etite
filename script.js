@@ -23,6 +23,7 @@ foodApp.foodEntity = (cuisine) => {
         },
     }).then((result) => {
         // console.log(result.restaurants)
+        // shuffleArray(foodApp.displayFood);
         foodApp.displayFood(result)
     });
 }
@@ -30,7 +31,6 @@ foodApp.foodEntity = (cuisine) => {
     foodApp.displayFood = (result) => {
         $('ul').empty();
         // organize result
-        
         result.restaurants.forEach((item) => {
             // each restaurant object is here
             const title = $('<h2>').text(item.restaurant.name);
@@ -39,16 +39,25 @@ foodApp.foodEntity = (cuisine) => {
             const container = $('<li>').append(title, rating, address);
             $('ul').append(container);
             // push title to response array we created earlier
-            
             response.push(title, rating, address)
         })
     }
+
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+
     foodApp.updateTitle = (subject) => {
         $('#page-title').find('span').text(subject)
     }
 
 foodApp.init = () => {
-    // foodApp.foodEntity(73);
+
 
     $('#cuisine').on('change',function() {
 		const cuisineName = $(this).find(':selected').text();
