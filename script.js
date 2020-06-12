@@ -2,6 +2,15 @@ const foodApp = {};
 foodApp.apiKey = "ef7bb4cac402a95c8319040f2339e230";
 foodApp.apiUrl = "https://developers.zomato.com/api/v2.1/search";
 
+//shuffel array function
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
 // make empty array for our API response
 const response = [];
 
@@ -16,7 +25,7 @@ foodApp.foodEntity = (cuisine) => {
         },
         data: {
             city_id: 89,
-            cuisines: `${cuisine}` ,
+            cuisines: `${cuisine}`,
             // data: 'json',
             // count: 2
             // q: "toronto"
@@ -24,8 +33,9 @@ foodApp.foodEntity = (cuisine) => {
     }).then((result) => {
         // console.log(result.restaurants)
         foodApp.displayFood(result)
-    });
-}
+        })
+    }
+
 
     foodApp.displayFood = (result) => {
         $('ul').empty();
@@ -40,31 +50,22 @@ foodApp.foodEntity = (cuisine) => {
             // push title to response array we created earlier
             response.push(title, rating, address)
         })
-    }
-
-    function shuffleArray(array) {
-        for (var i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            const temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-        }
+        shuffleArray(response)
     }
 
     foodApp.updateTitle = (subject) => {
         $('#page-title').find('span').text(subject)
     }
-
-foodApp.init = () => {
-
-
-    $('#cuisine').on('change',function() {
-		const cuisineName = $(this).find(':selected').text();
-        const cuisine = this.value;
-        foodApp.updateTitle(cuisineName);
-		foodApp.foodEntity(cuisine);
-	})
-}   
+    
+    foodApp.init = () => {
+        
+        $('#cuisine').on('change',function() {
+            const cuisineName = $(this).find(':selected').text();
+            const cuisine = this.value;
+            foodApp.updateTitle(cuisineName);
+            foodApp.foodEntity(cuisine);
+        })
+    }   
 
 $(function() {
     foodApp.init();
