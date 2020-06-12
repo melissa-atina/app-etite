@@ -286,7 +286,7 @@ header {
           justify-content: center;
 }
 
-h1, p.header {
+h1, p {
   font-size: 30px;
   color: white;
   text-align: center;
@@ -295,3 +295,4 @@ h1, p.header {
 .container {
   height: 100vh;
 }
+/*# sourceMappingURL=styles.css.map */
