@@ -23,7 +23,6 @@ foodApp.foodEntity = (cuisine) => {
         },
     }).then((result) => {
         // console.log(result.restaurants)
-        // shuffleArray(foodApp.displayFood);
         foodApp.displayFood(result)
     });
 }
