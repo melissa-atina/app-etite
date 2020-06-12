@@ -1,0 +1,22 @@
+.wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+// resetting margin and padding
+ul,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+// resetting image sizing
+img {
+  width: 100%;
+  display: inline-block;
+}

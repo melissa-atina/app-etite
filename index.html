@@ -3,20 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<link rel="stylesheet" href="styles/styles.css">
+	<title>App-etite</title>
 </head>
 <body>
+<header>
+	<div class="welcome wrapper">
+		<h1>App-etite</h1>
+		<p>App-etite makes choosing where it eats less dauinting by narrowing down your searches for you.</p>
+		<button name="scroll" class="scroll">Begin</button>
+	</div>
+</header>
 
-	<header>
-
-	</header>
-
-	<main>
-		<div class="container">
-			<h1 id="page-title"><span>Select Your Cuisine!</span></h1>
-			<form action="">
-			  <label for="cuisine">Cuisine Type</label>
-			  <select name="cuisine" id="cuisine">
+<main>
+<section>
+	<div class="container wrapper" id="select-menu">
+		<h1 id="page-title"><span>Select Your Cuisine!</span></h1>
+		<form action="">
+			<label for="cuisine">Cuisine Type</label>
+			<select name="cuisine" id="cuisine">
 				<option value="55">Italian</option>
 				<option value="25">Chinese</option>
 				<option value="73">Mexican</option>
@@ -25,16 +30,17 @@
 				<option value="100">Desserts</option>
 				<option value="156">Greek</option>
 				<option value="112">Filipino</option>
-			  </select>
-		</div>
-
-	<ul> 
-		<!-- restaurants will append here -->
-	</ul>
+			</select>
+		</form>
+		<ul> 
+			<!-- restaurants will append here -->
+		</ul>
+	</div class="container wrapper">
+</section>
 </main>
 
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-    <script src="script.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src="script.js"></script>
 
 </body>
 </html>

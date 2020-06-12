@@ -2,6 +2,18 @@ const foodApp = {};
 foodApp.apiKey = "ef7bb4cac402a95c8319040f2339e230";
 foodApp.apiUrl = "https://developers.zomato.com/api/v2.1/search";
 
+// HEADER BUTTON
+// ON START, button scrolls them to the cuisine select menu
+$('.scroll').on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $(`#select-menu`).offset().top
+    },
+        'slow');
+})
+
+
+
 // make empty array for our API response
 const response = [];
 
