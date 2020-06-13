@@ -260,8 +260,11 @@ img {
   display: inline-block;
 }
 
-header {
+header, .container, .user-results {
   height: 100vh;
+}
+
+header {
   background-image: url("../assets/brooke-lark-wMzx2nBdeng-unsplash.jpg");
   background-size: cover;
   background-position: center;
@@ -286,12 +289,60 @@ header {
           justify-content: center;
 }
 
-h1, p.header {
+h1 {
+  font-family: "Euphoria Script", cursive;
+}
+
+p.header {
   font-size: 30px;
   color: white;
   text-align: center;
 }
 
-.container {
+.user-select .user-results {
   height: 100vh;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+select {
+  padding: 20px;
+  width: 35%;
+  border: 1px solid black;
+}
+
+label {
+  text-align: center;
+}
+
+.foodImg {
+  width: calc((100%) / 2);
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+li {
+  list-style: none;
 }

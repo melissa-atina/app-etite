@@ -1,5 +1,4 @@
 header {
-   height: 100vh;
    background-image: url("../assets/brooke-lark-wMzx2nBdeng-unsplash.jpg");
    background-size: cover;
    background-position: center;
@@ -15,7 +14,11 @@ header {
    justify-content: center;
 }
 
-h1, p.header {
+h1 {
+   font-family: $secondaryFont;
+}
+
+p.header {
    font-size: 30px;
    color: $primaryColor;
    text-align: center;

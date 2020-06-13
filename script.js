@@ -100,8 +100,11 @@ foodApp.foodEntity = (cuisine) => {
                 image = $('<img>').attr('src', 'http://lorempixel.com/200/200/food')
                 console.log('placeholder')
             }
-            const container = $('<li>').append(title, rating, address, image);
-            $('ul').append(container);
+
+            const container = $('<li>').addClass('foodInfo').append(title, address, rating);
+            const foodImg = $('<li>').addClass('foodImg').append(image);
+            console.log(foodImg);
+            $('ul').append(foodImg, container);
         
             // push title to response array we created earlier
             response.push(title, rating, address, image)

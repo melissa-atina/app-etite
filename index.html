@@ -3,39 +3,48 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Lato:wght@300&display=swap"
+		rel="stylesheet">
+		<!-- STYLE SHEET -->
 	<link rel="stylesheet" href="styles/styles.css">
 	<title>App-etite</title>
 </head>
 <body>
 <header>
 	<div class="welcome wrapper">
-		<h1>App-etite</h1>
-		<p class="header">App-etite makes choosing where it eats less dauinting by narrowing down your searches for you.</p>
+		<h1>app-etite</h1>
+		<p class="header">App-etite makes choosing where to eats less daunting by narrowing down your searches for you.</p>
 		<button name="scroll" class="scroll">Begin</button>
 	</div>
 </header>
 
 <main>
-<section>
+	<!-- take out class on section? -->
+<section class="user-select">
 	<div class="container wrapper" id="select-menu">
-		<h1 id="page-title"><span>Select Your Cuisine!</span></h1>
-		<form action="">
-			<label for="cuisine">Cuisine Type</label>
-			<select name="cuisine" id="cuisine">
-				<option value="55">Italian</option>
-				<option value="25">Chinese</option>
-				<option value="73">Mexican</option>
-				<option value="207">Jamaican</option>
-				<option value="148">Indian</option>            
-				<option value="100">Desserts</option>
-				<option value="156">Greek</option>
-				<option value="112">Filipino</option>
-			</select>
-		</form>
-		<ul> 
-			<!-- restaurants will append here -->
-		</ul>
-	</div class="container wrapper">
+		<!-- <!-- <h2 id="page-title"><span>Select Your Cuisine!</span></h2> -->
+		<!-- <form action=""> -->
+		<label class="sr-only" for="cuisine">Cuisine Type</label>
+		<select name="cuisine" id="cuisine">
+			<option value="hide">--- Select your cuisine ---</option>
+			<option value="55">Italian</option>
+			<option value="25">Chinese</option>
+			<option value="73">Mexican</option>
+			<option value="207">Jamaican</option>
+			<option value="148">Indian</option>
+			<option value="100">Desserts</option>
+			<option value="156">Greek</option>
+			<option value="112">Filipino</option>
+		</select>
+	</div>
+		<!-- </form> -->
+</section>
+
+<section class="user-results wrapper">
+	<ul> 
+
+	</ul>
 </section>
 </main>
 
