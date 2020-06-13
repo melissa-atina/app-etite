@@ -1,0 +1,19 @@
+.user-results {
+   background-color: darkcyan;
+}
+
+.user-results .wrapper {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+}
+
+li {
+   border: 1px solid black;
+   width: calc((100% / 2) - 20px);
+   margin: 10px;
+   img {
+      float: left;
+   }
+}
+

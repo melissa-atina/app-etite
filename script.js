@@ -101,13 +101,15 @@ foodApp.foodEntity = (cuisine) => {
                 console.log('placeholder')
             }
 
-            const container = $('<li>').addClass('foodInfo').append(title, address, rating);
-            const foodImg = $('<li>').addClass('foodImg').append(image);
-            console.log(foodImg);
-            $('ul').append(foodImg, container);
+            // const container = $('<li>').addClass('foodInfo').append(title, address, rating);
+            // const foodImg = $('<li>').addClass('foodImg').append(image);
+            // console.log(foodImg);
+            const container = $('<li>').append(image, title, address, rating);
+            $('ul').append(container);
+
         
             // push title to response array we created earlier
-            response.push(title, rating, address, image)
+            response.push(image, title, rating, address)
         })
     }
 
