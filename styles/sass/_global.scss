@@ -41,6 +41,15 @@ img {
 }
 
 // section heights
-header, .container, .user-results {
+header, .container  {
   height: 100vh;
+}
+
+.user-results, .user-select {
+   background-image: url(../assets/cement-background.png);
+   background-color: rgba(255,255,255,0.5);
+   background-position: bottom center;
+   background-attachment: fixed;
+   background-size: cover;
+   background-repeat: no-repeat;
 }

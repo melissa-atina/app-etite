@@ -1,5 +1,26 @@
 @media (max-width: 900px) {
-	select {
-		padding: 10px;
+	.results-box {
+		display: flex;
+		flex-direction: column;
+		margin: 30px;
 	}
+
+
+	.results-image, .results-text {
+		width: 100%;
+	}
+
+	h3 {
+		padding-bottom: 6%;
+	}
+}
+
+@media (max-width: 600px) {
+	.result {
+		display: flex;
+		flex-direction: column;
+	}
+
+	
+
 }
