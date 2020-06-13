@@ -2,6 +2,13 @@ const foodApp = {};
 foodApp.apiKey = "ef7bb4cac402a95c8319040f2339e230";
 foodApp.apiUrl = "https://developers.zomato.com/api/v2.1/search";
 
+
+// foodApp.refresh = function(){
+//     $('html,body').animate({
+//         scrollTop: $("header").offset().top
+//     },
+//         'slow');
+
 // HEADER BUTTON
 // ON START, button scrolls them to the cuisine select menu
 $('.scroll').on('click', function (e) {
@@ -13,11 +20,10 @@ $('.scroll').on('click', function (e) {
 })
 
 
-
 // make empty array for our API response
 const response = [];
 
-// call zomato API with cuisine query
+// first API call based on cuisine that user selects
 foodApp.foodEntity = (cuisine) => {
     $.ajax({
         url: foodApp.apiUrl,
@@ -45,18 +51,19 @@ foodApp.foodEntity = (cuisine) => {
 
         //1- # of pages <50 or >50
         //we want to assign the random page based on if it provides less than or  more than 50
+        //since we can start on any page we want, we want to generate a random page number
+
         let randomPage = 1;
-        // console.log(noOfpages)
-        if (noOfpages >= 50) {
-            randomPage = (Math.ceil(Math.random()* 50));
+        console.log(noOfpages)
+        if (noOfpages >= 60) {
+            randomPage = (Math.ceil(Math.random()* 60));
             //this one would apply to all restaurants that have greater than 50 pages
         } else {
             randomPage = (Math.ceil(Math.random()* noOfpages));
             console.log('else')
         }
-        // console.log(randomPage)
-        //since we can start on any page we want, we want to generate a random page number
-        //create a 2nd API call and pass the randomizeStart as start param
+        console.log(randomPage)
+        // 2nd API call and pass the randomPage as start param
         $.ajax({
             url: foodApp.apiUrl,
             method: 'GET',
@@ -71,13 +78,10 @@ foodApp.foodEntity = (cuisine) => {
                 count: 2,
             },
         }).then((result) => {
-            // console.log(result)
+            console.log(result)
             foodApp.displayFood(result)
 
         })
-
-        //we will get 20 random restaurants from our API
-        //then randomly select 2
     })
 }
         
@@ -89,8 +93,8 @@ foodApp.foodEntity = (cuisine) => {
         result.restaurants.forEach((item) => {
             // each restaurant object is here
             const title = $('<h2>').text(item.restaurant.name);
-            const rating = $('<p>').text(item.restaurant.user_rating["aggregate_rating"]);
-            const address = $('<p>').text(item.restaurant.location["address"]);
+            const rating = $('<p>').html(`Rating: ${item.restaurant.user_rating["aggregate_rating"]}<i class="fas fa-star"></i>`);
+            const address = $('<p>').text(`Address: ${item.restaurant.location["address"]}`);
             
             let image = 1;
             if (item.restaurant.thumb != "") {
@@ -101,17 +105,21 @@ foodApp.foodEntity = (cuisine) => {
                 console.log('placeholder')
             }
 
+
             // const container = $('<li>').addClass('foodInfo').append(title, address, rating);
             // const foodImg = $('<li>').addClass('foodImg').append(image);
             // console.log(foodImg);
             const container = $('<li>').append(image, title, address, rating);
-            $('ul').append(container);
+            $('ul').append( container);
 
         
             // push title to response array we created earlier
             response.push(image, title, rating, address)
+
+
         })
     }
+
 
     foodApp.updateTitle = (subject) => {
         $('#page-title').find('span').text(subject)
@@ -126,6 +134,15 @@ foodApp.foodEntity = (cuisine) => {
             foodApp.foodEntity(cuisine);
         })
     }   
+
+    //USER SELECT 
+    $('select').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $(`#user-results`).offset().top
+        },
+            'slow');
+    })
 
 $(function() {
     foodApp.init();
