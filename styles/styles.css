@@ -251,8 +251,25 @@ p {
   padding: 0;
 }
 
+h2 {
+  text-align: center;
+}
+
 p {
   color: black;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+li {
+  list-style: none;
 }
 
 img {
@@ -299,10 +316,6 @@ p.header {
   text-align: center;
 }
 
-.user-select .user-results {
-  height: 100vh;
-}
-
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -319,7 +332,7 @@ p.header {
           justify-content: center;
 }
 
-h2 {
+label {
   text-align: center;
 }
 
@@ -329,20 +342,31 @@ select {
   border: 1px solid black;
 }
 
-label {
-  text-align: center;
+.user-select {
+  background-color: grey;
 }
 
-.foodImg {
-  width: calc((100%) / 2);
+.user-results {
+  background-color: darkcyan;
 }
 
-ul {
+.user-results .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 li {
-  list-style: none;
+  border: 1px solid black;
+  width: calc((100% / 2) - 20px);
+  margin: 10px;
+}
+
+li img {
+  float: left;
 }
