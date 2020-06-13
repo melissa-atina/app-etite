@@ -79,70 +79,71 @@ foodApp.foodEntity = (cuisine) => {
         
 
 
-    foodApp.displayFood = (result) => {
-        $('.result').empty();
-        // organize result
-        result.restaurants.forEach((item) => {
-            // each restaurant object is here
+foodApp.displayFood = (result) => {
+    $('.result').empty();
+    // organize result
+    result.restaurants.forEach((item) => {
+        // each restaurant object is here
 
-            const title = item.restaurant.name;
-            const rating = item.restaurant.user_rating["aggregate_rating"];
-            const address = item.restaurant.location["address"];
-            
-            let image = 1;
-            if (item.restaurant.thumb != "") {
-                image = item.restaurant.thumb;
-                console.log(item.restaurant.thumb)
-            } else {
-                image = 'http://lorempixel.com/200/200/food'
-                console.log('placeholder')
-            }
-            const container = `
-                <div class="results-box">
-                    <div class="results-image">
-                        <img src="${image} alt="${title}">
+        const title = item.restaurant.name;
+        const rating = item.restaurant.user_rating["aggregate_rating"];
+        const address = item.restaurant.location["address"];
+        
+        let image = 1;
+        if (item.restaurant.thumb != "") {
+            image = item.restaurant.thumb;
+            console.log(item.restaurant.thumb)
+        } else {
+            image = 'http://lorempixel.com/200/200/food'
+            console.log('placeholder')
+        }
+        const container = `
+            <div class="results-box">
+                <div class="results-image">
+                    <img src="${image} alt="${title}">
+                </div>
+                <div class="results-text">
+                    <div class="results-title">
+                        <h3>${title}</h3>
                     </div>
-                    <div class="results-text">
-                        <div class="results-title">
-                            <h3>${title}</h3>
-                        </div>
-                        <div class="result-info">
-                            <p>${address}</p>
-                            <p><i class="fas fa-star"></i> Rating: ${rating}</p>
-                        </div>
+                    <div class="result-info">
+                        <p><i class="fas fa-map-marker-alt"></i> ${address}</p>
+                        <p><i class="fas fa-star"></i> Rating: ${rating}</p>
                     </div>
                 </div>
-            `
-            $('.result').append(container)
-        
-            // push title to response array we created earlier
-            response.push(image, title, rating, address)
-        })
-    }
-
-
-    foodApp.updateTitle = (subject) => {
-        $('#page-title').find('span').text(subject)
-    }
-    
-    foodApp.init = () => {
-        
-        $('#cuisine').on('change',function() {
-            const cuisineName = $(this).find(':selected').text();
-            const cuisine = this.value;
-            foodApp.updateTitle(cuisineName);
-            foodApp.foodEntity(cuisine);
-        })
-    }   
-
-    //brings user to next section upon selecting cuisine
-    $('select').on('click', function (e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $(`#user-results`).offset().top
-        },
-            'slow');
+            </div>
+        `
+        $('.result').append(container)
+        // push title to response array we created earlier
+        response.push(image, title, rating, address)
     })
+}
+
+
+foodApp.updateTitle = (subject) => {
+    $('#page-title').find('span').text(subject)
+}
+
+foodApp.init = () => {
+    
+    $('#cuisine').on('change',function() {
+        const cuisineName = $(this).find(':selected').text();
+        const cuisine = this.value;
+        foodApp.updateTitle(cuisineName);
+        foodApp.foodEntity(cuisine);
+    })
+}   
+
+
+
+//brings user to next section upon selecting cuisine
+$('select').on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $(`#user-results`).offset().top
+    },
+        'slow');
+})
 
 $(function() {
     foodApp.init();
