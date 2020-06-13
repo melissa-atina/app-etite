@@ -250,22 +250,24 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+h1 {
+  font-family: 'Euphoria Script', cursive;
+  font-size: 14vw;
+  margin: 0;
+}
+
 h2 {
   text-align: center;
 }
 
-p {
-  color: black;
-  font-size: 14px;
+h3 {
+  font-size: 30px;
+  font-weight: bold;
 }
 
-ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+p {
+  color: black;
+  font-size: 20px;
 }
 
 img {
@@ -300,11 +302,6 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-h1 {
-  font-family: "Euphoria Script", cursive;
-  font-size: 14vw;
 }
 
 p.header {
@@ -353,30 +350,51 @@ select {
 main {
   background-image: url(../assets/cement-background.png);
   background-color: rgba(255, 255, 255, 0.5);
-  background-position: center;
+  background-position: bottom center;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.user-results .wrapper {
+.result {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (2fr)[2];
+  -ms-grid-columns: (2fr)[2];
+      grid-template: repeat(2, 2fr)/repeat(2, 2fr);
+}
+
+.results-box {
+  margin: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
+  padding: 20px;
 }
 
-li {
-  border: 1px solid black;
-  width: calc((100% / 2) - 100px);
-  margin: 50px;
-  padding: 10px;
-  list-style: none;
-  background-color: rgba(255, 255, 255, 0.5);
+.results-box p {
+  padding: 5px 0;
+}
+
+.results-text {
+  width: 60%;
+  padding-left: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.results-image {
+  width: 40%;
 }
 
 @media (max-width: 900px) {

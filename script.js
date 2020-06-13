@@ -2,13 +2,6 @@ const foodApp = {};
 foodApp.apiKey = "ef7bb4cac402a95c8319040f2339e230";
 foodApp.apiUrl = "https://developers.zomato.com/api/v2.1/search";
 
-
-// foodApp.refresh = function(){
-//     $('html,body').animate({
-//         scrollTop: $("header").offset().top
-//     },
-//         'slow');
-
 // HEADER BUTTON
 // ON START, button scrolls them to the cuisine select menu
 $('.scroll').on('click', function (e) {
@@ -18,7 +11,6 @@ $('.scroll').on('click', function (e) {
     },
         'slow');
 })
-
 
 // make empty array for our API response
 const response = [];
@@ -45,7 +37,7 @@ foodApp.foodEntity = (cuisine) => {
         //here we want to look at result.results_found and store in a const
 
         //divide const by 2 and should return # of various pages in the cuisine array
-        const noOfpages = (Math.ceil(resultpp / 2));
+        const noOfpages = (Math.ceil(resultpp / 4));
         // console.log(noOfpages)
         //we want a fully randomized number of restaurants
 
@@ -75,7 +67,7 @@ foodApp.foodEntity = (cuisine) => {
                 city_id: 89,
                 cuisines: `${cuisine}`,
                 start: randomPage,
-                count: 2,
+                count: 4,
             },
         }).then((result) => {
             console.log(result)
@@ -88,35 +80,43 @@ foodApp.foodEntity = (cuisine) => {
 
 
     foodApp.displayFood = (result) => {
-        $('ul').empty();
+        $('.result').empty();
         // organize result
         result.restaurants.forEach((item) => {
             // each restaurant object is here
-            const title = $('<h2>').text(item.restaurant.name);
-            const rating = $('<p>').html(`Rating: ${item.restaurant.user_rating["aggregate_rating"]}<i class="fas fa-star"></i>`);
-            const address = $('<p>').text(`Address: ${item.restaurant.location["address"]}`);
+
+            const title = item.restaurant.name;
+            const rating = item.restaurant.user_rating["aggregate_rating"];
+            const address = item.restaurant.location["address"];
             
             let image = 1;
             if (item.restaurant.thumb != "") {
-                image = $('<img>').attr('src', item.restaurant.thumb);
+                image = item.restaurant.thumb;
                 console.log(item.restaurant.thumb)
             } else {
-                image = $('<img>').attr('src', 'http://lorempixel.com/200/200/food')
+                image = 'http://lorempixel.com/200/200/food'
                 console.log('placeholder')
             }
-
-
-            // const container = $('<li>').addClass('foodInfo').append(title, address, rating);
-            // const foodImg = $('<li>').addClass('foodImg').append(image);
-            // console.log(foodImg);
-            const container = $('<li>').append(image, title, address, rating);
-            $('ul').append( container);
-
+            const container = `
+                <div class="results-box">
+                    <div class="results-image">
+                        <img src="${image} alt="${title}">
+                    </div>
+                    <div class="results-text">
+                        <div class="results-title">
+                            <h3>${title}</h3>
+                        </div>
+                        <div class="result-info">
+                            <p>${address}</p>
+                            <p><i class="fas fa-star"></i> Rating: ${rating}</p>
+                        </div>
+                    </div>
+                </div>
+            `
+            $('.result').append(container)
         
             // push title to response array we created earlier
             response.push(image, title, rating, address)
-
-
         })
     }
 
@@ -135,7 +135,7 @@ foodApp.foodEntity = (cuisine) => {
         })
     }   
 
-    //USER SELECT 
+    //brings user to next section upon selecting cuisine
     $('select').on('click', function (e) {
         e.preventDefault();
         $('html, body').animate({
