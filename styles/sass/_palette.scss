@@ -2,5 +2,11 @@
 $primaryColor: white;
 
 // Fonts
-$primaryFont: 'Lato', sans-serif;
+// $primaryFont: 'Lato', sans-serif;
 $secondaryFont: 'Euphoria Script', cursive;
+
+
+// @mixin font($size) {
+//     font-size: $size * 1px;
+//     font-family: 'Lato', sans-serif;
+//     }
