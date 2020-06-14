@@ -7,10 +7,12 @@ foodApp.apiUrl = "https://developers.zomato.com/api/v2.1/search";
 $('.scroll').on('click', function (e) {
     e.preventDefault();
     $('html, body').animate({
-        scrollTop: $(`#select-menu`).offset().top
+        scrollTop: $(`#select-locale`).offset().top
     },
         'slow');
 })
+
+
 
 // make empty array for our API response
 const response = [];
@@ -136,7 +138,8 @@ foodApp.init = () => {
 
     $('form').on('submit', function (event) {
         event.preventDefault();
-        const locale = $('select[name="locale"]').val();
+        // const locale = $('select[name="locale"]').val();
+        const locale = $('input[name=user-input-locale]:checked').val();
         const localeNum = parseInt(locale);
         const cuisine = $('select[name="cuisine"]').val();
     
@@ -147,7 +150,19 @@ foodApp.init = () => {
         console.log(cuisine)
     })
     
+    $('input').change( function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $(`.cuisine-select`).offset().top
+        },
+            'slow');
+            console.log('clicked button')
+    })
+
+
+
     
+
 //     setTimeout(() => {
 //         $('html,body').animate({
 //             scrollTop: $(".user-results").offset().top
@@ -162,16 +177,16 @@ foodApp.init = () => {
     // });
 }
 
+// $('.submit-btn').on('click', function (e) {
+//     e.preventDefault();
+//     $('html, body').animate({
+//         scrollTop: $(`.user-results`).offset().top
+//     },
+//     'slow');
+//     console.log('clicked button')
 
+// })
 
-//brings user to next section upon selecting cuisine
-$('select').on('click', function (e) {
-    e.preventDefault();
-    $('html, body').animate({
-        scrollTop: $(`#user-results`).offset().top
-    },
-        'slow');
-})
 
 $(function() {
     foodApp.init();
