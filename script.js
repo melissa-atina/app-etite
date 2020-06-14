@@ -33,16 +33,12 @@ foodApp.foodEntity = (localeNum, cuisine) => {
             count: 1,
         },
     }).then((result) => {
-        console.log(result)
-        console.log(localeNum)
         
         const resultpp = result.results_found;
-        // console.log(resultpp)
         //here we want to look at result.results_found and store in a const
 
         //divide const by 2 and should return # of various pages in the cuisine array
         const noOfpages = (Math.ceil(resultpp / 4));
-        // console.log(noOfpages)
         //we want a fully randomized number of restaurants
 
         //1- # of pages <50 or >50
@@ -50,15 +46,14 @@ foodApp.foodEntity = (localeNum, cuisine) => {
         //since we can start on any page we want, we want to generate a random page number
 
         let randomPage = 1;
-        // console.log(noOfpages)
+
         if (noOfpages >= 60) {
             randomPage = (Math.ceil(Math.random()* 60));
             //this one would apply to all restaurants that have greater than 50 pages
         } else {
             randomPage = (Math.ceil(Math.random()* noOfpages));
-            console.log('else')
         }
-        // console.log(randomPage)
+    
         // 2nd API call and pass the randomPage as start param
         $.ajax({
             url: foodApp.apiUrl,
@@ -75,7 +70,6 @@ foodApp.foodEntity = (localeNum, cuisine) => {
                 count: 4,
             },
         }).then((result) => {
-            console.log(result)
             foodApp.displayFood(result)
         })
     })
@@ -86,12 +80,6 @@ foodApp.foodEntity = (localeNum, cuisine) => {
 // LOCATION SELECT SECTION
 foodApp.init = () => {
 
-    // $('#cuisine').on('change',function() {
-    //     const cuisineName = $(this).find(':selected').text();
-    //     const cuisine = this.value;
-    //     foodApp.updateTitle(cuisineName);
-    //     foodApp.foodEntity(cuisine);
-    // })
 
     $('form').on('submit', function (event) {
         event.preventDefault();
@@ -102,9 +90,6 @@ foodApp.init = () => {
 
         foodApp.foodEntity(localeNum, cuisine);
 
-        console.log(typeof locale)
-        console.log(localeNum)
-        console.log(cuisine)
     })
 
     $('input').change(function (e) {
@@ -113,7 +98,6 @@ foodApp.init = () => {
             scrollTop: $(`.cuisine-select`).offset().top
         },
             'slow');
-        console.log('clicked button')
     })
 
 
@@ -140,8 +124,8 @@ foodApp.displayFood = (result) => {
     $('.result').empty();
     // organize result
     result.restaurants.forEach((item) => {
-        // each restaurant object is here
 
+        // each restaurant object is here
         const title = item.restaurant.name;
         const rating = item.restaurant.user_rating["aggregate_rating"];
         const address = item.restaurant.location["address"];
@@ -150,10 +134,8 @@ foodApp.displayFood = (result) => {
         let image = 1;
         if (item.restaurant.thumb != "") {
             image = item.restaurant.thumb;
-            console.log(item.restaurant.thumb)
         } else {
             image = 'http://lorempixel.com/200/200/food'
-            console.log('placeholder')
         }
 
         const container = `
@@ -189,9 +171,6 @@ $('#submit-btn').on('click', function (e) {
 foodApp.updateTitle = (subject) => {
     $('#page-title').find('span').text(subject)
 }
-
-
-
 
 
 $(function() {
