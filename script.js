@@ -80,9 +80,62 @@ foodApp.foodEntity = (localeNum, cuisine) => {
         })
     })
 }
-        
+   
 
 
+// LOCATION SELECT SECTION
+foodApp.init = () => {
+
+    // $('#cuisine').on('change',function() {
+    //     const cuisineName = $(this).find(':selected').text();
+    //     const cuisine = this.value;
+    //     foodApp.updateTitle(cuisineName);
+    //     foodApp.foodEntity(cuisine);
+    // })
+
+    $('form').on('submit', function (event) {
+        event.preventDefault();
+        // const locale = $('select[name="locale"]').val();
+        const locale = $('input[name=user-input-locale]:checked').val();
+        const localeNum = parseInt(locale);
+        const cuisine = $('select[name="cuisine"]').val();
+
+        foodApp.foodEntity(localeNum, cuisine);
+
+        console.log(typeof locale)
+        console.log(localeNum)
+        console.log(cuisine)
+    })
+
+    $('input').change(function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $(`.cuisine-select`).offset().top
+        },
+            'slow');
+        console.log('clicked button')
+    })
+
+
+
+
+    //     setTimeout(() => {
+    //         $('html,body').animate({
+    //             scrollTop: $(".user-results").offset().top
+    //         },
+    //             'slow');
+    //     }, 1000);
+    // } 
+
+
+    // $('.refresh').click(function () {
+    //     app.refreshFunction();
+    // });
+}
+
+
+
+// CUISINE SELECTION SECTION
 foodApp.displayFood = (result) => {
     $('.result').empty();
     // organize result
@@ -119,73 +172,26 @@ foodApp.displayFood = (result) => {
         $('.result').append(container)
         // push title to response array we created earlier
         response.push(image, title, rating, address)
+
     })
 }
+
+// cuisine select button scroll
+$('#submit-btn').on('click', function (e) {
+    // e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $(`#user-results`).offset().top
+    },
+    'slow');
+})
 
 
 foodApp.updateTitle = (subject) => {
     $('#page-title').find('span').text(subject)
 }
 
-foodApp.init = () => {
-    
-    // $('#cuisine').on('change',function() {
-    //     const cuisineName = $(this).find(':selected').text();
-    //     const cuisine = this.value;
-    //     foodApp.updateTitle(cuisineName);
-    //     foodApp.foodEntity(cuisine);
-    // })
-
-    $('form').on('submit', function (event) {
-        event.preventDefault();
-        // const locale = $('select[name="locale"]').val();
-        const locale = $('input[name=user-input-locale]:checked').val();
-        const localeNum = parseInt(locale);
-        const cuisine = $('select[name="cuisine"]').val();
-    
-        foodApp.foodEntity(localeNum, cuisine);
-
-        console.log(typeof locale)
-        console.log(localeNum)
-        console.log(cuisine)
-    })
-    
-    $('input').change( function (e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $(`.cuisine-select`).offset().top
-        },
-            'slow');
-            console.log('clicked button')
-    })
 
 
-
-    
-
-//     setTimeout(() => {
-//         $('html,body').animate({
-//             scrollTop: $(".user-results").offset().top
-//         },
-//             'slow');
-//     }, 1000);
-// } 
-
-    
-    // $('.refresh').click(function () {
-    //     app.refreshFunction();
-    // });
-}
-
-// $('.submit-btn').on('click', function (e) {
-//     e.preventDefault();
-//     $('html, body').animate({
-//         scrollTop: $(`.user-results`).offset().top
-//     },
-//     'slow');
-//     console.log('clicked button')
-
-// })
 
 
 $(function() {
