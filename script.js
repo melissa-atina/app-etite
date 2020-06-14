@@ -16,7 +16,7 @@ $('.scroll').on('click', function (e) {
 const response = [];
 
 // first API call based on cuisine that user selects
-foodApp.foodEntity = (cuisine) => {
+foodApp.foodEntity = (localeNum, cuisine) => {
     $.ajax({
         url: foodApp.apiUrl,
         method: 'GET',
@@ -25,14 +25,14 @@ foodApp.foodEntity = (cuisine) => {
             "user-key": foodApp.apiKey,
         },
         data: {
+            entity_id: `${localeNum}`,
             entity_type: 'subzone',
-            entity_id: 87141,
             cuisines: `${cuisine}`,
             count: 1,
         },
     }).then((result) => {
         console.log(result)
-        // console.log(city)
+        console.log(localeNum)
         
         const resultpp = result.results_found;
         // console.log(resultpp)
@@ -66,8 +66,8 @@ foodApp.foodEntity = (cuisine) => {
                 "user-key": foodApp.apiKey,
             },
             data: {
+                entity_id: `${localeNum}`,
                 entity_type: 'subzone',
-                entity_id: 87141,
                 cuisines: `${cuisine}`,
                 start: randomPage,
                 count: 4,
@@ -75,7 +75,6 @@ foodApp.foodEntity = (cuisine) => {
         }).then((result) => {
             console.log(result)
             foodApp.displayFood(result)
-
         })
     })
 }
@@ -128,13 +127,40 @@ foodApp.updateTitle = (subject) => {
 
 foodApp.init = () => {
     
-    $('#cuisine').on('change',function() {
-        const cuisineName = $(this).find(':selected').text();
-        const cuisine = this.value;
-        foodApp.updateTitle(cuisineName);
-        foodApp.foodEntity(cuisine);
+    // $('#cuisine').on('change',function() {
+    //     const cuisineName = $(this).find(':selected').text();
+    //     const cuisine = this.value;
+    //     foodApp.updateTitle(cuisineName);
+    //     foodApp.foodEntity(cuisine);
+    // })
+
+    $('form').on('submit', function (event) {
+        event.preventDefault();
+        const locale = $('select[name="locale"]').val();
+        const localeNum = parseInt(locale);
+        const cuisine = $('select[name="cuisine"]').val();
+    
+        foodApp.foodEntity(localeNum, cuisine);
+
+        console.log(typeof locale)
+        console.log(localeNum)
+        console.log(cuisine)
     })
-}   
+    
+    
+//     setTimeout(() => {
+//         $('html,body').animate({
+//             scrollTop: $(".user-results").offset().top
+//         },
+//             'slow');
+//     }, 1000);
+// } 
+
+    
+    // $('.refresh').click(function () {
+    //     app.refreshFunction();
+    // });
+}
 
 
 
