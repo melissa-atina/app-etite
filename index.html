@@ -25,13 +25,11 @@
 
 <main>
 
-	<!-- potential neighbourhood ID -->
-
 <div class="user-input-container">
 	<form class="user-input-form">
-		<!-- <section class="user-input-locale">
+		<section class="user-input-locale" id="select-locale">
 			
-			<div class="user-input-locale-flex">
+			<div class="user-input-locale-flex container">
 				<label for="input-trinity" class="input-trinity">
 					<input type="radio" name="user-input-locale" id="input-trinity" class="input" value="87291" class="input-trinity">
 					Trinity Bellwoods
@@ -43,13 +41,13 @@
 				</label>
 
 				<label for="input-north-york" class="input-north-york">
-					<input type="radio" name="user-input-locale" id="input-north-york" class="87881" value="arts & theatre" class="input-north-york">
+					<input type="radio" name="user-input-locale" id="input-north-york" class="input" value="87881" class="input-north-york">
 					North York
 				</label>
 			</div>
 
-		</section> -->
-		<section class="user-select-locale">
+		</section>
+		<!-- <section class="user-select-locale">
 			<div class="container wrapper" id="select-locale">
 				<label class="sr-only" for="locale">locale Type</label>
 				<select name="locale" id="locale">
@@ -57,20 +55,12 @@
 					<option value="87291">Trinity Bellwoods</option>
 					<option value="87881">North York</option>
 					<option value="87241">Kensington-Chinatown</option>
-					<!-- <option value="25">Chinese</option>
-					<option value="73">Mexican</option>
-					<option value="207">Jamaican</option>
-					<option value="148">Indian</option>
-					<option value="156">Greek</option>
-					<option value="112">Filipino</option>
-					<option value="60">Japanese</option>
-					<option value="67">Korean</option> -->
-				</select>
+			</select>
 			</div>
-		</section>
+		</section> -->
 
 
-		<section class="user-select">
+		<section class="cuisine-select" id="cuisine-select">
 			<div class="container wrapper" id="select-menu">
 				<label class="sr-only" for="cuisine">Cuisine Type</label>
 				<select name="cuisine" id="cuisine">
@@ -87,13 +77,13 @@
 					<option value="60">Japanese</option>
 					<option value="67">Korean</option>
 				</select>
+				<div class="submit-section">
+					<button type="submit" class="submit-btn">Let's Eat!</button>
+					<p class="hidden">You must select all input fields before submitting!</p>
+				</div>
 			</div>
 		</section>
-		<div class="submit-section">
-			<button type="submit" class="submit-btn">Let's Eat!</button>
-			<p class="hidden">You must select all input fields before submitting!</p>
-		</div>
-
+			
 	</form>
 </div>
 	
