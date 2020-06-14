@@ -25,15 +25,17 @@ foodApp.foodEntity = (cuisine) => {
             "user-key": foodApp.apiKey,
         },
         data: {
-            city_id: 89,
+            entity_type: 'subzone',
+            entity_id: 87141,
             cuisines: `${cuisine}`,
             count: 1,
         },
     }).then((result) => {
-        // console.log(result)
+        console.log(result)
+        // console.log(city)
         
         const resultpp = result.results_found;
-        console.log(resultpp)
+        // console.log(resultpp)
         //here we want to look at result.results_found and store in a const
 
         //divide const by 2 and should return # of various pages in the cuisine array
@@ -46,7 +48,7 @@ foodApp.foodEntity = (cuisine) => {
         //since we can start on any page we want, we want to generate a random page number
 
         let randomPage = 1;
-        console.log(noOfpages)
+        // console.log(noOfpages)
         if (noOfpages >= 60) {
             randomPage = (Math.ceil(Math.random()* 60));
             //this one would apply to all restaurants that have greater than 50 pages
@@ -54,7 +56,7 @@ foodApp.foodEntity = (cuisine) => {
             randomPage = (Math.ceil(Math.random()* noOfpages));
             console.log('else')
         }
-        console.log(randomPage)
+        // console.log(randomPage)
         // 2nd API call and pass the randomPage as start param
         $.ajax({
             url: foodApp.apiUrl,
@@ -64,7 +66,8 @@ foodApp.foodEntity = (cuisine) => {
                 "user-key": foodApp.apiKey,
             },
             data: {
-                city_id: 89,
+                entity_type: 'subzone',
+                entity_id: 87141,
                 cuisines: `${cuisine}`,
                 start: randomPage,
                 count: 4,
@@ -108,7 +111,7 @@ foodApp.displayFood = (result) => {
                 <h3>${title}</h3>
                 <p><i class="fas fa-star"></i> Rating: ${rating}</p>
                 <p><i class="fas fa-map-marker-alt"></i> ${address}</p>
-                <button><a href="${website}">Take Me There</a></button
+                <button><a href="${website}">Take Me There</a></button>
             </div>
         </div>
         `

@@ -26,9 +26,20 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+
+
+   //user results button
    button {
       padding: 10px 15px;
       margin: 10px;
+
+      &:hover {
+      //    transition: none;
+         background-color: #2e623182;
+      //    box-shadow: none;
+      //    transform: none;
+      }
+
       a {
          text-decoration: none;
          color: black;

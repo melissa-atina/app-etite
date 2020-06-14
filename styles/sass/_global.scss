@@ -46,10 +46,22 @@ header, .container  {
 }
 
 .user-results, .user-select {
-   background-image: url(../assets/cement-background.png);
+   background-image: url('../assets/cement-bg-edited.jpg');
    background-color: rgba(255,255,255,0.5);
    background-position: bottom center;
    background-attachment: fixed;
    background-size: cover;
    background-repeat: no-repeat;
+}
+
+
+//general button styling
+button {
+  padding: 10px 35px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: #93ab9482;
+
 }
