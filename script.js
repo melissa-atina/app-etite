@@ -88,6 +88,7 @@ foodApp.displayFood = (result) => {
         const title = item.restaurant.name;
         const rating = item.restaurant.user_rating["aggregate_rating"];
         const address = item.restaurant.location["address"];
+        const website = item.restaurant.url;
         
         let image = 1;
         if (item.restaurant.thumb != "") {
@@ -97,21 +98,19 @@ foodApp.displayFood = (result) => {
             image = 'http://lorempixel.com/200/200/food'
             console.log('placeholder')
         }
+
         const container = `
-            <div class="results-box">
-                <div class="results-image">
-                    <img src="${image} alt="${title}">
-                </div>
-                <div class="results-text">
-                    <div class="results-title">
-                        <h3>${title}</h3>
-                    </div>
-                    <div class="result-info">
-                        <p><i class="fas fa-map-marker-alt"></i> ${address}</p>
-                        <p><i class="fas fa-star"></i> Rating: ${rating}</p>
-                    </div>
-                </div>
+        <div class="results-box">
+            <div class="results-image">
+                <img src="${image}" alt="${title}">
             </div>
+            <div class="results-text">
+                <h3>${title}</h3>
+                <p><i class="fas fa-star"></i> Rating: ${rating}</p>
+                <p><i class="fas fa-map-marker-alt"></i> ${address}</p>
+                <button><a href="${website}">Take Me There</a></button
+            </div>
+        </div>
         `
         $('.result').append(container)
         // push title to response array we created earlier
