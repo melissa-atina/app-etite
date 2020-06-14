@@ -5,6 +5,11 @@
    flex-wrap: wrap;
 }
 
+.area-select {
+   text-align: center;
+   font-size: 20px;
+}
+
 .input-space {
    display: flex;
    flex-direction: column;
@@ -32,9 +37,6 @@ p.locale-label {
    font-size: 45px;
    padding: 20px;
    &:hover {
-      background-color:rgba(255,255,255,0.2);
-      transition: all .2s ease-in-out;
-      box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.37);
-      transform: scale(1.02);
+      text-shadow: 0 0 .65px #333, 0 0 .65px #333;
    }
 }

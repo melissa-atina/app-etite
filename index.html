@@ -27,6 +27,9 @@
 <div class="user-input-container">
 	<form class="user-input-form">
 		<section class="user-input-locale" id="select-locale">
+			<div class="area-select">
+				<label for="">Select your area</label>
+			</div>
 			<div class="user-input-locale-flex">
 				<div class="input-space left">
 					<label for="input-annex" >
@@ -78,7 +81,7 @@
 		<section class="cuisine-select" id="cuisine-select">
 			<div class="container wrapper" id="select-menu">
 				<label class="sr-only" for="cuisine">Cuisine Type</label>
-				<select name="cuisine" id="cuisine">
+				<select name="cuisine" id="cuisine" required>
 					<option value="hide">--Select your cuisine--</option>
 					<option value="30">Cafes</option>
 					<option value="100">Desserts</option>
