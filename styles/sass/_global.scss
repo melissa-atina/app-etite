@@ -1,27 +1,43 @@
 .wrapper {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
+	max-width: 1200px;
+	width: 90%;
+	margin: 0 auto;
 }
 
 // resetting margin and padding
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif;
+	background-image: url('../assets/cement-bg-edited.jpg');
+	background-color: rgba(255,255,255,0.5);
+	background-position: bottom center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: black ;
+}
+
+h1, h2, h3 {
+	text-align: center;
 }
 
 h1 {
 	font-family: 'Euphoria Script', cursive;
 	font-size: 14vw;
 	margin: 0;
-  }
-  
+	}
+	
 h2 {
-   text-align: center;
+	position: relative;
+	font-size: 50px;
+	text-transform: uppercase;
+	margin: 100px 0;
+	font-weight: bolder;
+	letter-spacing: 0.4vw;
 }
 
 h3 {
@@ -29,34 +45,94 @@ h3 {
 	font-weight: bold;
 }
 
+p {
+	font-size: 20px;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
 // resetting image sizing
 img {
-  width: 100%;
-  display: inline-block;
+	width: 100%;
+	display: inline-block;
 }
 
 // section heights
-header, .container, .user-input-locale, .user-input-locale-flex    {
-  height: 100vh;
+header, .container, .user-input-locale,  {
+	height: 100vh;
 }
-
-body {
-   background-image: url('../assets/cement-bg-edited.jpg');
-   background-color: rgba(255,255,255,0.5);
-   background-position: bottom center;
-   background-attachment: fixed;
-   background-size: cover;
-   background-repeat: no-repeat;
-}
-
 
 //general button styling
 button {
-  padding: 10px 35px;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 10px;
-  margin-top: 10px;
-  background-color: #93ab9482;
+	padding: 10px 35px;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 10px;
+	background-color: #93ab9482;
 
+	p {
+		font-weight: bold;
+	}
+}
+
+//header button hover
+header button, .submit-btn{
+	&:hover{
+			transition: all .2s ease-in-out;
+			box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+			transform: scale(1);
+	}
+}
+
+input {
+	visibility: hidden;
+}
+
+option {
+   text-transform: uppercase;
+}
+
+label {
+   text-align: center;
+}
+
+select {
+   border: 1px solid black;
+   font-size: 28px;
+   width: 50%;
+   padding: 3% 0 3% 2%;
+   border-radius: 10px;
+   color: white;
+   background: rgba(0, 0, 0, 0.25);
+   border: none;
+   text-transform: uppercase;
+	letter-spacing: 5px;
+	margin: 0 auto;
+}
+
+//display flex and center
+.user-input-locale-flex, .container, .welcome, .header-text  {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.header-text, .submit-section {
+	button {
+      width: 50%;
+		margin: 0 auto;
+		
+		p {
+			font-size: 25px;
+			letter-spacing: 0.1vw;
+		}
+   }
 }

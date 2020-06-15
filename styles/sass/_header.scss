@@ -3,36 +3,24 @@ header {
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
+
+   p {
+      font-size: 30px;
+      padding: 10px 0px;
+      margin: 10px 0;
+   }
 }
+
 .welcome {
    height: 100%;
    width: 70%;
 }
 
 .welcome, .header-text {
-   display: flex; 
    flex-direction: column;
-   align-items: center;
-   justify-content: center;
 }
 
 .header-text {
    background-color: rgba(255, 255, 255, 0.5);
    padding: 30px;
-}
-
-p.header {
-   font-size: 30px;
-   text-align: center;
-   color: black;
-   padding: 10px 0px;
-}
-
-//header button hover
-header button {
-   &:hover{
-      transition: all .2s ease-in-out;
-      box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
-      transform: scale(1);
-   }
 }

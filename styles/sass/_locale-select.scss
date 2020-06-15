@@ -1,15 +1,4 @@
-h2 {
-   text-align: center;
-   position: relative;
-   top: 240px;
-   font-size: 3vw;
-   text-transform: uppercase;
-}
-
 .user-input-locale-flex {
-   display: flex;
-   justify-content: center;
-   align-content: center;
    flex-wrap: wrap;
 }
 
@@ -23,12 +12,6 @@ h2 {
    flex-direction: column;
 }
 
-.left, .right {
-   p {
-   text-align: center;
-   }
-}
-
 .right {
    padding-left: 20px;
 }
@@ -37,13 +20,12 @@ h2 {
    padding-right: 20px;
 }
 
-input {
-   visibility: hidden;
-}
 
 p.locale-label {
+   text-align: center;
    font-size: 45px;
    padding: 20px;
+
    &:hover {
       text-shadow: 0 0 .65px #333, 0 0 .65px #333;
    }

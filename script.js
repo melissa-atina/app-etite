@@ -7,12 +7,10 @@ foodApp.apiUrl = "https://developers.zomato.com/api/v2.1/search";
 $('.scroll').on('click', function (e) {
     e.preventDefault();
     $('html, body').animate({
-        scrollTop: $(`#select-locale`).offset().top
+        scrollTop: $(`main`).offset().top
     },
         'slow');
 })
-
-
 
 // make empty array for our API response
 const response = [];
@@ -75,53 +73,19 @@ foodApp.foodEntity = (localeNum, cuisine) => {
     })
 }
    
-
-
-// LOCATION SELECT SECTION
-foodApp.init = () => {
-
-
-    $('form').on('submit', function (event) {
-        event.preventDefault();
-        // const locale = $('select[name="locale"]').val();
-        const locale = $('input[name=user-input-locale]:checked').val();
-        const localeNum = parseInt(locale);
-        const cuisine = $('select[name="cuisine"]').val();
-
-        foodApp.foodEntity(localeNum, cuisine);
-
-    })
-
-    $('input').change(function (e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $(`.cuisine-select`).offset().top
-        },
-            'slow');
-    })
-
-
-
-
-    //     setTimeout(() => {
-    //         $('html,body').animate({
-    //             scrollTop: $(".user-results").offset().top
-    //         },
-    //             'slow');
-    //     }, 1000);
-    // } 
-
-
-    // $('.refresh').click(function () {
-    //     app.refreshFunction();
-    // });
-}
-
-
-
 // CUISINE SELECTION SECTION
 foodApp.displayFood = (result) => {
     $('.result').empty();
+    $('.result-header').empty();
+
+    // const userLocaleSelect = $('input[name]:checked').text();
+    // console.log(userLocaleSelect)
+    const userCuisineSelect = $('select option:selected').text();
+
+    const appendHeader = `
+        <h3>You Chose <span>${userCuisineSelect}!</span></h3>
+    `
+    $('.result-header').append(appendHeader);
     // organize result
     result.restaurants.forEach((item) => {
 
@@ -147,7 +111,7 @@ foodApp.displayFood = (result) => {
                 <h3>${title}</h3>
                 <p><i class="fas fa-star"></i> Rating: ${rating}</p>
                 <p><i class="fas fa-map-marker-alt"></i> ${address}</p>
-                <button><a href="${website}">Take Me There</a></button>
+                <button><a href="${website}"><p>Take Me There</p></a></button>
             </div>
         </div>
         `
@@ -155,11 +119,32 @@ foodApp.displayFood = (result) => {
         // push title to response array we created earlier
         response.push(image, title, rating, address)
 
-        // foodApp.updateTitle = (cuisine) => {
-        //     $('#cuisine').find('span').text(cuisine)
-        // }
     })
 }
+
+// LOCATION SELECT SECTION
+foodApp.init = () => {
+
+    $('form').on('submit', function (event) {
+        event.preventDefault();
+        // const locale = $('select[name="locale"]').val();
+        const locale = $('input[name=user-input-locale]:checked').val();
+        const localeNum = parseInt(locale);
+        const cuisine = $('select[name="cuisine"]').val();
+
+        foodApp.foodEntity(localeNum, cuisine);
+    })
+
+    $('input').change(function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $(`.cuisine-select`).offset().top
+        },
+            'slow');
+    })
+}
+
+
 
 // cuisine select button scroll
 $('#submit-btn').on('click', function (e) {
@@ -169,7 +154,6 @@ $('#submit-btn').on('click', function (e) {
     },
     'slow');
 })
-
 
 
 
