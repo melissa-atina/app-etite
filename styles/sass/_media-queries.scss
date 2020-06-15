@@ -1,5 +1,5 @@
-@media (max-width: 900px) {
-	.results-box {
+@media (max-width: 1000px) {
+		.results-box {
 		display: flex;
 		flex-direction: column;
 		margin: 30px;
@@ -16,9 +16,15 @@
 
 	.submit-btn {
 		font-size: 2vw;
-		width: 50%;
-		padding: 6%;
+		// width: 50%;
+		// padding: 6%;
 	}
+}
+
+@media (max-width: 900px) {
+
+
+
 
 	select {
 		font-size: 2.75vw;

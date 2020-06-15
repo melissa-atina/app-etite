@@ -104,9 +104,10 @@ foodApp.displayFood = (result) => {
 
         const container = `
         <div class="results-box">
-            <div class="results-image placeholder-content">
-                <img src="${image}" alt="${title}">
+            <div class="results-image">
+                    <img src="${image}" alt="${title}" class="placeholder-content">
             </div>
+
             <div class="results-text">
                 <h3>${title}</h3>
                 <p><i class="fas fa-star"></i> Rating: ${rating}</p>
@@ -114,7 +115,7 @@ foodApp.displayFood = (result) => {
                 <button><a href="${website}"><p>Take Me There</p></a></button>
             </div>
         </div>
-        `
+        `;
         $('.result').append(container)
         // push title to response array we created earlier
         response.push(image, title, rating, address)

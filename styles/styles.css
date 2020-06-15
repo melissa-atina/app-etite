@@ -297,7 +297,7 @@ img {
 }
 
 header, .container, .user-input-locale {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 button {
@@ -456,6 +456,10 @@ header p.header {
   padding: 20px 70px;
 }
 
+section.user-results .container {
+  height: auto;
+}
+
 .result-header h3 {
   text-transform: uppercase;
 }
@@ -528,12 +532,7 @@ header p.header {
   width: 40%;
 }
 
-.results-image img {
-  z-index: 1;
-}
-
 .placeholder-content {
-  height: 100px;
   overflow: hidden;
   background: #000;
   position: relative;
@@ -541,8 +540,8 @@ header p.header {
           animation-duration: 10s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: 10s;
+          animation-iteration-count: 10s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-name: placeholderAnimate;
@@ -570,7 +569,7 @@ header p.header {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .results-box {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -589,9 +588,10 @@ header p.header {
   }
   .submit-btn {
     font-size: 2vw;
-    width: 50%;
-    padding: 6%;
   }
+}
+
+@media (max-width: 900px) {
   select {
     font-size: 2.75vw;
   }
