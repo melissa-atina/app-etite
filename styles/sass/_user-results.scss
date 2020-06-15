@@ -54,4 +54,11 @@
 
 .results-image {
    width: 40%;
+   // insert some type of placeholder for the background
+
+   img {
+      // pos rel
+      z-index: 1;
+
+   }
 }

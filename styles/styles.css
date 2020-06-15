@@ -257,7 +257,7 @@ body {
   color: black;
 }
 
-h1, h2 {
+h1, h2, h3 {
   text-align: center;
 }
 
@@ -528,6 +528,48 @@ header p.header {
   width: 40%;
 }
 
+.results-image img {
+  z-index: 1;
+}
+
+.placeholder-content {
+  height: 100px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-name: placeholderAnimate;
+          animation-name: placeholderAnimate;
+  background: #f6f7f8;
+  background: -webkit-gradient(linear, left top, right top, color-stop(2%, #eee), color-stop(18%, #ddd), color-stop(33%, #eee));
+  background: linear-gradient(to right, #eee 2%, #ddd 18%, #eee 33%);
+}
+
+@-webkit-keyframes placeholderAnimate {
+  0% {
+    background-position: -650px 0;
+  }
+  100% {
+    background-position: 650px 0;
+  }
+}
+
+@keyframes placeholderAnimate {
+  0% {
+    background-position: -650px 0;
+  }
+  100% {
+    background-position: 650px 0;
+  }
+}
+
 @media (max-width: 900px) {
   .results-box {
     display: -webkit-box;
@@ -567,7 +609,7 @@ header p.header {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .result {
     height: 100%;
     display: -webkit-box;
@@ -583,5 +625,17 @@ header p.header {
   }
   p.locale-label {
     font-size: 8vw;
+  }
+}
+
+@media (max-width: 480px) {
+  p.header {
+    font-size: 17px;
+  }
+  button {
+    padding: 10px;
+  }
+  .input-space label {
+    padding: 5px;
   }
 }

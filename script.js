@@ -82,9 +82,8 @@ foodApp.displayFood = (result) => {
     // console.log(userLocaleSelect)
     const userCuisineSelect = $('select option:selected').text();
 
-
     const appendHeader = `
-        <h2>You Chose <span>${userCuisineSelect}! </span></h2>
+        <h3>You Chose <span>${userCuisineSelect}!</span></h3>
     `
     $('.result-header').append(appendHeader);
     // organize result
@@ -100,12 +99,12 @@ foodApp.displayFood = (result) => {
         if (item.restaurant.thumb != "") {
             image = item.restaurant.thumb;
         } else {
-            image = 'http://lorempixel.com/200/200/food'
+            image = 'http://lorempixel.com/200/200/food';
         }
 
         const container = `
         <div class="results-box">
-            <div class="results-image">
+            <div class="results-image placeholder-content">
                 <img src="${image}" alt="${title}">
             </div>
             <div class="results-text">
