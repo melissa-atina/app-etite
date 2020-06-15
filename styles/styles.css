@@ -301,7 +301,7 @@ header, .container, .user-input-locale {
 }
 
 button {
-  padding: 10px 35px;
+  padding: 10px;
   text-transform: uppercase;
   border: none;
   border-radius: 10px;
@@ -311,7 +311,7 @@ button {
 }
 
 header button, .submit-btn {
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
   font-size: 25px;
   letter-spacing: 0.1vw;
@@ -456,7 +456,7 @@ header p.header {
 }
 
 .submit-btn {
-  padding: 20px 70px;
+  padding: 20px;
 }
 
 section.user-results .container {
@@ -585,14 +585,12 @@ section.user-results .container {
   h3 {
     padding-bottom: 6%;
   }
-  .submit-btn {
-    font-size: 2vw;
-  }
 }
 
 @media (max-width: 900px) {
   select {
     font-size: 2.75vw;
+    width: 70%;
   }
   .right {
     padding-left: 0px;
@@ -633,6 +631,10 @@ section.user-results .container {
   }
   button {
     padding: 10px;
+  }
+  header .button {
+    width: 65%;
+    font-size: 20px;
   }
   .input-space label {
     padding: 5px;
