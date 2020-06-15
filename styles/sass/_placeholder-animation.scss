@@ -1,6 +1,5 @@
 .placeholder-content {
-	// height: 205px;
-	height: 100px;
+	// height: 150px;
     overflow: hidden;
     background: #000;
     position: relative;
@@ -8,12 +7,11 @@
     // Animation
     animation-duration: 10s;
     animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 10s;
     animation-timing-function: linear;
     animation-name: placeholderAnimate;
     background: #f6f7f8; // Fallback
     background: linear-gradient(to right, #eee 2%, #ddd 18%, #eee 33%);
-    // background-size: 1300px; // Animation Area
 }
 
 @keyframes placeholderAnimate {

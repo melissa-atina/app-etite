@@ -1,5 +1,16 @@
-.result-header h3 {
+section.user-results {
+   // padding-top: 100px;
+   .container {
+      height: auto;
+   }
+}
+
+.result-header {
+   // margin: 50px auto;
+
+   h3 {
    text-transform: uppercase;
+   }
 }
 
 .result {
@@ -54,11 +65,8 @@
 
 .results-image {
    width: 40%;
-   // insert some type of placeholder for the background
-
-   img {
-      // pos rel
-      z-index: 1;
-
-   }
+   // img {
+   //    position: relative;
+   //    z-index: 1;
+   // }
 }

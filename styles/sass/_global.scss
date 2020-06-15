@@ -64,8 +64,8 @@ img {
 }
 
 // section heights
-header, .container, .user-input-locale,  {
-	height: 100vh;
+header, .container, .user-input-locale  {
+	min-height: 100vh;
 }
 
 //general button styling
