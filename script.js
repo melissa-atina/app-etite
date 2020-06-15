@@ -112,7 +112,7 @@ foodApp.displayFood = (result) => {
                 <h3>${title}</h3>
                 <p><i class="fas fa-star"></i> Rating: ${rating}</p>
                 <p><i class="fas fa-map-marker-alt"></i> ${address}</p>
-                <button><a href="${website}"><p>Take Me There</p></a></button>
+                <button><a href="${website}">Take Me There</a></button>
             </div>
         </div>
         `;
@@ -128,7 +128,6 @@ foodApp.init = () => {
 
     $('form').on('submit', function (event) {
         event.preventDefault();
-        // const locale = $('select[name="locale"]').val();
         const locale = $('input[name=user-input-locale]:checked').val();
         const localeNum = parseInt(locale);
         const cuisine = $('select[name="cuisine"]').val();
@@ -143,13 +142,15 @@ foodApp.init = () => {
         },
             'slow');
     })
+
+    //when user selects cuisine, activate class on button
+    // $('select[name="cuisine"]').addClass('.submit-btn');
 }
 
 
 
 // cuisine select button scroll
 $('#submit-btn').on('click', function (e) {
-    // e.preventDefault();
     $('html, body').animate({
         scrollTop: $(`#user-results`).offset().top
     },

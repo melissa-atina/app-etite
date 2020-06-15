@@ -25,14 +25,14 @@ section.user-results {
    border: 1px solid black;
    padding: 20px;
    transition: all .2s ease-in-out;
-   
-   
+      
    &:hover {
       box-shadow: 0px 2px 27px 6px rgba(0,0,0,0.57);
       transform: scale(1.02);
    }
-      p {
-         padding: 5px 0;
+
+   p {
+      padding: 5px 0;
    }
 }
 
@@ -53,10 +53,6 @@ section.user-results {
       padding: 10px 15px;
       margin: 10px;
 
-      p {
-         text-align: center;
-      }
-
       &:hover {
          background-color: #2e623182;
       }
@@ -65,8 +61,10 @@ section.user-results {
 
 .results-image {
    width: 40%;
-   // img {
-   //    position: relative;
-   //    z-index: 1;
-   // }
 }
+
+
+// .submit-btn {
+//       box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+
+// }
