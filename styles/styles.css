@@ -257,7 +257,7 @@ body {
   color: black;
 }
 
-h1, h2, h3 {
+h1, h2 {
   text-align: center;
 }
 
@@ -277,12 +277,12 @@ h2 {
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
 }
 
 p {
-  font-size: 20px;
+  font-size: 17px;
   text-align: center;
 }
 
@@ -306,10 +306,14 @@ button {
   border: none;
   border-radius: 10px;
   background-color: #93ab9482;
+  font-weight: bold;
 }
 
-button p {
-  font-weight: bold;
+.header-text button, .submit-section button {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 25px;
+  letter-spacing: 0.1vw;
 }
 
 header button:hover, .submit-btn:hover {
@@ -362,16 +366,6 @@ select {
   visibility: hidden;
 }
 
-.header-text button, .submit-section button {
-  width: 50%;
-  margin: 0 auto;
-}
-
-.header-text button p, .submit-section button p {
-  font-size: 25px;
-  letter-spacing: 0.1vw;
-}
-
 header {
   background-image: url("../assets/brooke-lark-wMzx2nBdeng-unsplash.jpg");
   background-size: cover;
@@ -381,8 +375,12 @@ header {
 
 header p {
   font-size: 30px;
-  padding: 10px 0px;
+  padding: 20px;
   margin: 10px 0;
+}
+
+header p.header {
+  margin-bottom: 30px;
 }
 
 .welcome {
@@ -430,13 +428,13 @@ header p {
   padding-right: 20px;
 }
 
-p.locale-label {
+.input-space label {
   text-align: center;
   font-size: 45px;
   padding: 20px;
 }
 
-p.locale-label:hover {
+.input-space label:hover {
   text-shadow: 0 0 .65px #333, 0 0 .65px #333;
 }
 
@@ -456,6 +454,10 @@ p.locale-label:hover {
 
 .submit-btn {
   padding: 20px 70px;
+}
+
+.result-header h3 {
+  text-transform: uppercase;
 }
 
 .result {
@@ -551,6 +553,12 @@ p.locale-label:hover {
   select {
     font-size: 2.75vw;
   }
+  .right {
+    padding-left: 0px;
+  }
+  .left {
+    padding-right: 0px;
+  }
 }
 
 @media (max-width: 630px) {
@@ -569,12 +577,6 @@ p.locale-label:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-  .right {
-    padding-left: 0px;
-  }
-  .left {
-    padding-right: 0px;
   }
   .left p, .right p {
     text-align: center;

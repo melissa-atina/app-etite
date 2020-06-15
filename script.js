@@ -82,8 +82,9 @@ foodApp.displayFood = (result) => {
     // console.log(userLocaleSelect)
     const userCuisineSelect = $('select option:selected').text();
 
+
     const appendHeader = `
-        <h3>You Chose <span>${userCuisineSelect}!</span></h3>
+        <h2>You Chose <span>${userCuisineSelect}! </span></h2>
     `
     $('.result-header').append(appendHeader);
     // organize result
