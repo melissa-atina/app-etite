@@ -25,6 +25,12 @@
 	}
 }
 
+@media(max-width: 630px) {
+	h2 {
+		top: 8%;
+	}
+}
+
 @media (max-width: 600px) {
 	.result {
 		height: 100%;
