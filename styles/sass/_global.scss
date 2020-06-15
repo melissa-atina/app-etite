@@ -21,7 +21,7 @@ body {
 	color: black ;
 }
 
-h1, h2, h3 {
+h1, h2{
 	text-align: center;
 }
 
@@ -41,12 +41,12 @@ h2 {
 }
 
 h3 {
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: bold;
 }
 
 p {
-	font-size: 20px;
+	font-size: 17px;
 	text-align: center;
 }
 
@@ -73,10 +73,16 @@ button {
 	border: none;
 	border-radius: 10px;
 	background-color: #93ab9482;
+	font-weight: bold;
+}
 
-	p {
-		font-weight: bold;
-	}
+.header-text, .submit-section {
+	button {
+      width: 50%;
+		margin: 0 auto;
+		font-size: 25px;
+		letter-spacing: 0.1vw;
+   }
 }
 
 //header button hover
@@ -123,16 +129,4 @@ select {
 
 .hidden {
 	visibility: hidden;
-}
-
-.header-text, .submit-section {
-	button {
-      width: 50%;
-		margin: 0 auto;
-		
-		p {
-			font-size: 25px;
-			letter-spacing: 0.1vw;
-		}
-   }
 }
