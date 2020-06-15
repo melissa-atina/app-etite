@@ -155,6 +155,9 @@ foodApp.displayFood = (result) => {
         // push title to response array we created earlier
         response.push(image, title, rating, address)
 
+        // foodApp.updateTitle = (cuisine) => {
+        //     $('#cuisine').find('span').text(cuisine)
+        // }
     })
 }
 
@@ -168,9 +171,6 @@ $('#submit-btn').on('click', function (e) {
 })
 
 
-foodApp.updateTitle = (subject) => {
-    $('#page-title').find('span').text(subject)
-}
 
 
 $(function() {
