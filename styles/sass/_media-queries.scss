@@ -17,7 +17,7 @@
 @media (max-width: 900px) {
 
 	select {
-		font-size: 2.75vw;
+		// font-size: 2.75vw;
 		width: 70%;
 	}
 	
@@ -38,6 +38,10 @@
 }
 
 @media (max-width: 700px) {
+
+	.wrapper {
+		width: 80%;
+	}
 	.result {
 		height: 100%;
 		display: flex;
@@ -54,6 +58,12 @@
 	}
 }
 
+@media (max-width: 575px) {
+	.submit-btn {
+		width: 70%;
+	}
+}
+
 @media (max-width: 480px) {
 	p.header {
 		font-size: 17px;
@@ -64,7 +74,7 @@
 	}
 
 	header .button {
-		width: 65%;
+		// width: 65%;
 		font-size: 20px;
 	}
 

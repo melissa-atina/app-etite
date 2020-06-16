@@ -1,9 +1,3 @@
-.wrapper {
-	max-width: 1200px;
-	width: 90%;
-	margin: 0 auto;
-}
-
 // resetting margin and padding
 * {
 	margin: 0;
@@ -21,8 +15,10 @@ body {
 	color: black ;
 }
 
-h1, h2, h3{
-	text-align: center;
+.wrapper {
+	max-width: 1200px;
+	width: 90%;
+	margin: 0 auto;
 }
 
 h1 {
@@ -30,24 +26,16 @@ h1 {
 	font-size: 14vw;
 	margin: 0;
 	}
-	
+
 h2 {
 	position: relative;
 	font-size: 50px;
-	text-transform: uppercase;
 	margin: 100px 0;
-	font-weight: bolder;
 	letter-spacing: 0.4vw;
-}
-
-h3 {
-	font-size: 25px;
-	font-weight: bold;
 }
 
 p {
 	font-size: 17px;
-	text-align: center;
 }
 
 a {
@@ -55,10 +43,24 @@ a {
 	color: black;
 }
 
-// resetting image sizing
-img {
-	width: 100%;
-	display: inline-block;
+span {
+	font-weight: bolder;
+}
+
+h2, h3, span, option {
+	text-transform: uppercase;
+}
+
+h1, h2, h3, p, button, label, option, input {
+	text-align: center;
+}
+
+button, select, input, option {
+	font-size: 100%;
+}
+
+h3, span {
+	font-size: 25px;
 }
 
 // section heights
@@ -74,9 +76,7 @@ button {
 	border-radius: 10px;
 	background-color: #2e623182;
 	font-weight: bold;
-	text-align: center;
 }
-
 
 //header button hover
 header button, .submit-btn{
@@ -86,7 +86,7 @@ header button, .submit-btn{
 	letter-spacing: 0.1vw;
 
 	&:hover{
-		transition: ease-in-out .5s;
+		transition: ease-in-out .8s;
 		// box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
 		box-shadow: inset 400px 0 0 0 rgba(255, 255, 255, 0.5);
 		background-color: #93ab9482;
@@ -99,18 +99,11 @@ input {
 	visibility: hidden;
 }
 
-option {
-   text-transform: uppercase;
-}
-
-label {
-   text-align: center;
-}
 
 select {
    border: 1px solid black;
-   font-size: 28px;
-   width: 50%;
+//    font-size: 28px;
+   width: 90%;
    padding: 3% 0 3% 2%;
    border-radius: 10px;
    color: white;
