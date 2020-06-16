@@ -5,9 +5,11 @@ section.user-results {
 }
 
 .result-header {
+   text-align: center;
+   padding: 20px 0;
 
    h3 {
-   text-transform: uppercase;
+      font-weight: lighter;
    }
 }
 
@@ -50,6 +52,7 @@ section.user-results {
    button {
       padding: 10px 15px;
       margin: 10px;
+      background-color: #93ab9482;
 
       &:hover {
          background-color: #2e623182;

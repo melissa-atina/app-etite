@@ -17,12 +17,11 @@
 @media (max-width: 900px) {
 
 	select {
-		// font-size: 2.75vw;
 		width: 70%;
 	}
-	
+
 	.right {
-		padding-left: 0px;
+	padding-left: 0px;
 	}
 	
 	.left {
@@ -30,12 +29,6 @@
 	}
 }
 
-@media(max-width: 630px) {
-	h2 {
-		top: 8%;
-	}
-	
-}
 
 @media (max-width: 700px) {
 
@@ -48,13 +41,15 @@
 		flex-direction: column;
 	}
 
-
-	.left p, .right p {
-		text-align: center;
-	}
-
 	p.locale-label {
     font-size: 8vw;
+	}
+}
+
+
+@media(max-width: 630px) {
+	h2 {
+		top: 8%;
 	}
 }
 
@@ -74,7 +69,6 @@
 	}
 
 	header .button {
-		// width: 65%;
 		font-size: 20px;
 	}
 
