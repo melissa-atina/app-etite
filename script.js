@@ -139,16 +139,15 @@ foodApp.init = () => {
             'slow');
     })
 
+    // cuisine select button scroll
+    $('.submit-btn').on('click', function (e) {
+        $('html, body').animate({
+            scrollTop: $('.user-results').offset().top
+        },
+            'slow');
+    })
+    
 }
-
-// cuisine select button scroll
-$('#submit-btn').on('click', function (e) {
-    $('html, body').animate({
-        scrollTop: $(`#user-results`).offset().top
-    },
-    1000);
-})
-
 
 
 $(function() {
