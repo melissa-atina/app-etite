@@ -34,11 +34,9 @@ foodApp.foodEntity = (localeNum, cuisine) => {
         
         //find number of pages and store in a variable
         const resultpp = result.results_found;
-        console.log(resultpp)
 
         //divide const by 4 and should return # of various pages in the cuisine array
         const noOfpages = (Math.ceil(resultpp / 4));
-        console.log(noOfpages)
 
         let randomPage = 1;
         //if noOfPages >= 60, randomize
@@ -48,7 +46,7 @@ foodApp.foodEntity = (localeNum, cuisine) => {
             //randomizes if noOfPages <60
             randomPage = (Math.ceil(Math.random()* noOfpages));
         }
-        console.log(randomPage)
+
     
         // 2nd API call and pass the randomPage as start param
         $.ajax({
@@ -131,20 +129,22 @@ foodApp.init = () => {
         foodApp.foodEntity(localeNum, cuisine);
     })
 
+    // locale select button scroll
     $('input').change(function (e) {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $(`.cuisine-select`).offset().top
         },
-            'slow');
+        'slow');
     })
+
 
     // cuisine select button scroll
     $('.submit-btn').on('click', function (e) {
         $('html, body').animate({
             scrollTop: $('.user-results').offset().top
         },
-            'slow');
+        'slow');
     })
     
 }
