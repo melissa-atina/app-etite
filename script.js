@@ -134,7 +134,7 @@ foodApp.init = () => {
     $('input').change(function (e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $(`.cuisine-select`).offset().top
+            scrollTop: $('.cuisine-select').offset().top
         },
             'slow');
     })
